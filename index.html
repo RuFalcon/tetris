@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тетрис</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <div class="text-center mb-6">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">Тетрис</h1>
+        <p class="text-gray-600">Классическая игра на JavaScript</p>
+    </div>
+    
+    <div id="game-container" class="relative">
+        <div id="tetris-board"></div>
+        
+        <div id="game-info">
+            <div class="info-box">
+                <h2 class="text-xl font-semibold mb-2">Следующая фигура</h2>
+                <div id="next-piece-display"></div>
+            </div>
+            
+            <div class="info-box">
+                <h2 class="text-xl font-semibold mb-2">Счет</h2>
+                <p>Уровень: <span id="level">1</span></p>
+                <p>Очки: <span id="score">0</span></p>
+                <p>Линии: <span id="lines">0</span></p>
+            </div>
+            
+            <div class="info-box">
+                <h2 class="text-xl font-semibold mb-2">Управление</h2>
+                <ul class="controls-list">
+                    <li>← → : Перемещение</li>
+                    <li>↑ : Поворот</li>
+                    <li>↓ : Ускорение</li>
+                    <li>Пробел: Моментальное падение</li>
+                    <li>P: Пауза</li>
+                </ul>
+            </div>
+            
+            <button id="start-button" class="w-full">Начать игру</button>
+        </div>
+        
+        <div id="paused-overlay" class="paused-overlay">
+            <p>Пауза</p>
+            <p class="text-sm mt-2">Нажмите P для продолжения</p>
+        </div>
+        
+        <div id="game-over-overlay" class="game-over-overlay">
+            <p>Игра окончена!</p>
+            <p class="text-sm mt-2">Ваш счет: <span id="final-score">0</span></p>
+            <button id="restart-button">Играть снова</button>
+        </div>
+    </div>
+    <script src="tetris-logic.js"></script>
+</body>
+</html>
